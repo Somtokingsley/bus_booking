@@ -1,9 +1,9 @@
- <section id="bg-bus" class="d-flex align-items-center">
+<section id="bg-bus" class="d-flex align-items-center">
     <div class="container">
       <?php if(!isset($_SESSION['login_id'])): ?>
-      	<center><button class="btn btn-info btn-lg" type="button" id="book_now">Book Now</button></center>
+      	<center><button class="btn btn-info btn-lg" type="button" id="book_now">Browse Schedule</button></center>
       <?php else: ?>
-        <h2>Welcome</h2>
+        <center><h1 style="color: #2c4964; font-size: 3rem;">Welcome</h1></center>
       <?php endif; ?>
     </div>
   </section>

@@ -18,8 +18,12 @@
           </li>
           <li class="drop-down nav-user"><a href="#"><?php echo $_SESSION['login_name'] ?> </a>
              <ul>
-              <li><a href="./index.php?page=user">Users</a></li>
-              <li><a href="javascript:void(0)" id="manage_account">Manage Account</a></li>
+              <?php if (isset($_SESSION['super_admin']) && $_SESSION['super_admin'] === true):?>
+                <li><a href="./index.php?page=user">Users</a></li>
+              <?php endif ?>
+              <?php if (isset($_SESSION['super_admin']) && $_SESSION['super_admin'] === true):?>
+                <li><a href="javascript:void(0)" id="manage_account">Manage Account</a></li>
+              <?php endif ?>
               <li><a href="./logout.php">Logout</a></li>
              
             </ul>

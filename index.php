@@ -43,9 +43,9 @@
           <div class="modal-body">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary submit" onclick="$('#uni_modal form').submit()">
+            <button type="button" class="btn btn-info submit" onclick="$('#uni_modal form').submit()" id="book_now_button">
               <?php echo isset($_SESSION['login_id']) ? 'Save' : 'Find' ?> 
-          </button>
+            </button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
         </div>
@@ -88,7 +88,7 @@
     </div>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <!-- <footer id="footer">
 
     <div class="container-fluid d-md-flex py-4">
 
@@ -98,7 +98,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

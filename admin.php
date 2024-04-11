@@ -9,7 +9,7 @@
         //     header('Location:home.php');
         // }
         ?>
-		<title>Admin Login |Bus Booking</title>
+		<title>Admin Login | Bus Booking</title>
 	</head>
     <style>
         body {
@@ -21,9 +21,9 @@
 }
     </style>
 	<body id='login-body' class="bg-light">
-    		<div class="card col-md-4 offset-md-4 mt-4">
-                <div class="card-header-edge text-white">
-                    <strong>Login</strong>
+        <div class="card col-md-4 offset-md-4 mt-4" style="padding-top: 25px;">
+                <div class="card-header-edge text-sky-blue" style="padding-left: 20px;">
+                    <strong style="font-size:25px;">Login</strong>
                 </div>
             <div class="card-body">
                      <form id="login-frm">
@@ -31,12 +31,24 @@
                             <label>Username</label>
                             <input type="username" name="username" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Password</label>
                             <input type="password" name="password" class="form-control">
-                        </div> 
+                        </div>  -->
+                        <div class="form-group mb-2">
+                        <label for="password" class="control-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" name="password" required value="<?php echo isset($meta['password']) ? $meta['password'] : '' ?>">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                        <i class="fas fa-eye" id="toggleIcon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="form-group text-right">
-                            <button class="btn btn-primary btn-block" name="submit">Login</button>
+                            <button class="btn btn-info btn-block" name="submit">Login</button>
                         </div>
                         
                     </form>
@@ -49,6 +61,7 @@
             $(document).ready(function(){
                 $('#login-frm').submit(function(e){
                     e.preventDefault()
+                    console.log($(this).serialize())
                     $('#login-frm button').attr('disable',true)
                     $('#login-frm button').html('Please wait...')
 
@@ -75,5 +88,20 @@
 
                 })
             })
+
+                    $(document).ready(function(){
+                $('#togglePassword').click(function(){
+                    var passwordField = $('#password');
+                    var passwordFieldType = passwordField.attr('type');
+                    if(passwordFieldType == 'password') {
+                        passwordField.attr('type', 'text');
+                        $('#toggleIcon').removeClass('fa-eye').addClass('fa-eye-slash');
+                    } else {
+                        passwordField.attr('type', 'password');
+                        $('#toggleIcon').removeClass('fa-eye-slash').addClass('fa-eye');
+                    }
+                });
+            });
+
         </script>
 </html>

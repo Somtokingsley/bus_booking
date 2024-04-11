@@ -36,7 +36,7 @@
 									<th class="text-center">Location</th>
 									<th class="text-center">Departure</th>
 									<th class="text-center">ETA</th>
-									<th class="text-center">Availability</th>
+									<th class="text-center">Total Seats</th>
 									<th class="text-center">Price</th>
 									<th class="text-center">Action</th>
 								</tr>

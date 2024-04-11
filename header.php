@@ -16,6 +16,7 @@
   <link href="assets/css/jquery.datetimepicker.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
+  <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
   <link href="assets/fontawesome/css/all.min.css" rel="stylesheet">
   <link href="assets/DataTables/datatables.min.css" rel="stylesheet">
   <!-- Template Main CSS File -->

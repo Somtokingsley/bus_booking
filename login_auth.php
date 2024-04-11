@@ -4,11 +4,20 @@
 
 	extract($_POST);
 	$qry = $conn->query("SELECT * FROM users where username='$username' and password = '$password' ");
+	$userData = $qry->fetch_array();
+
 	if($qry->num_rows > 0){
-		foreach($qry->fetch_array() as $k => $val){
-			if($k != 'password')
-			$_SESSION['login_'.$k] = $val;
+		$isSuperAdmin = false;
+
+		foreach($userData as $k => $val){
+			if ($k === 'user_type' && (int) $val === 1) {
+				$isSuperAdmin = true;
+			}
+			if($k != 'password') {
+				$_SESSION['login_'.$k] = $val;
+			}
 		}
+		$_SESSION['super_admin'] = $isSuperAdmin;
 		echo 1;
 	}else{
 		echo 2;

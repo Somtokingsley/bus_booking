@@ -126,7 +126,7 @@ INSERT INTO `schedule_list` (`id`, `bus_id`, `from_location`, `to_location`, `de
 CREATE TABLE `users` (
   `id` int(30) NOT NULL,
   `name` varchar(150) NOT NULL,
-  `user_type` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 = admin, 2= faculty , 3 = student',
+  `user_type` tinyint(1) NOT NULL DEFAULT 2 COMMENT '1 = superadmin, 2 = admin,',
   `username` varchar(25) NOT NULL,
   `password` varchar(25) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT ' 0 = incative , 1 = active',
